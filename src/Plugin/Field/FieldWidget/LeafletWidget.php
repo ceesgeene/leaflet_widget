@@ -157,7 +157,7 @@ class LeafletWidget extends GeofieldDefaultWidget {
     $map = leaflet_map_get_info($map_settings['leaflet_map']);
     $map['settings']['center'] = $map_settings['center'];
     $map['settings']['zoom'] = $map_settings['zoom'];
-    $element['map'] = leaflet_render_map($map, array(), $map_settings['height'] . 'px');
+    $element['map'] = \Drupal::service('leaflet.service')->leafletRenderMap($map, array(), $map_settings['height'] . 'px');
     $element['map']['#weight'] = -1;
 
     // Build JS settings for leaflet widget.
